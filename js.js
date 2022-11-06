@@ -16,7 +16,12 @@ let Computerhand = randomSelection(list);
 window.onload = function(){   //to solve https://stackoverflow.com/questions/18239430/cannot-set-property-innerhtml-of-null
     document.getElementById("player").innerHTML= SensitiveChange(Playerhand);
     document.getElementById("computer").innerHTML= Computerhand;
-    };
-//if wrongtypein
+    }
+// check typein and compare
+if (Playerhand === ("rock"||"paper"||"scissors")){
+    alert("inputoutcome");    
+}
+    else {alert("bad");}
+
 // compare 
 //return outcome 
