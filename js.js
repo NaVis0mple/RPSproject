@@ -1,18 +1,22 @@
-console.log("check")
+//5game
 // player type rock paper or scissor
 let Playerhand = prompt("your turn") ;
 // convert typein into uppercase 
 function SensitiveChange(word) {
-    return word.toUpperCase();
+    return word.toLowerCase();
 };
+//computergeneratorRandom
+let list = ["rock","paper","scissors"];
 
-//and return to the html
-window.onload = function(){   //to solve https://stackoverflow.com/questions/18239430/cannot-set-property-innerhtml-of-null
-document.getElementById("player").innerHTML= SensitiveChange(Playerhand) ;
+function randomSelection(list){    //random=0~0.99999     floor = 1.85421->1
+    return list [Math.floor((Math.random()*list.length))];
 }
-
-// computer (random of r p s)
-
+//return to html
+let Computerhand = randomSelection(list);
+window.onload = function(){   //to solve https://stackoverflow.com/questions/18239430/cannot-set-property-innerhtml-of-null
+    document.getElementById("player").innerHTML= SensitiveChange(Playerhand);
+    document.getElementById("computer").innerHTML= Computerhand;
+    };
+//if wrongtypein
 // compare 
-
 //return outcome 
