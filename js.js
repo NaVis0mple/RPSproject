@@ -1,10 +1,10 @@
 //5game
 // player type rock paper or scissor
-let Playerhand = prompt("your turn") ;
+let Playerhand = SensitiveChange(prompt("your turn")) ;
 // convert typein into uppercase 
 function SensitiveChange(word) {
     return word.toLowerCase();
-};
+}
 //computergeneratorRandom
 let list = ["rock","paper","scissors"];
 
