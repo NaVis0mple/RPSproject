@@ -18,10 +18,37 @@ window.onload = function(){   //to solve https://stackoverflow.com/questions/182
     document.getElementById("computer").innerHTML= Computerhand;
     }
 // check typein and compare
-if (Playerhand === ("rock"||"paper"||"scissors")){
-    alert("inputoutcome");    
-}
-    else {alert("bad");}
+if (Playerhand === "rock"||Playerhand ==="paper"||Playerhand ==="scissors"){      
+} else {alert("wrong word");}
 
 // compare 
+switch(Playerhand) {
+    case 'rock':
+        if (Computerhand === 'rock'){
+            alert('tie');}
+            else if (Computerhand==='scissors'){
+                alert('you win');
+            }else{
+                alert('you lose');
+            };
+            break;
+    case 'paper':
+        if (Computerhand === 'paper'){
+            alert('tie');}
+            else if (Computerhand==='scissors'){
+                alert('you lose');
+            }else{
+                alert('you win');
+            };
+            break;
+    case 'scissors':
+        if (Computerhand === 'scissors'){
+            alert('tie');}
+            else if (Computerhand==='paper'){
+                alert('you win');
+            }else{
+                alert('you lose');
+            };
+            break;
+}           
 //return outcome 
