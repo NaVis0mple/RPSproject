@@ -16,39 +16,43 @@ let Computerhand = randomSelection(list);
 window.onload = function(){   //to solve https://stackoverflow.com/questions/18239430/cannot-set-property-innerhtml-of-null
     document.getElementById("player").innerHTML= SensitiveChange(Playerhand);
     document.getElementById("computer").innerHTML= Computerhand;
+    document.getElementById("results").innerHTML= switchResult(Playerhand);//return outcome 
     }
 // check typein and compare
 if (Playerhand === "rock"||Playerhand ==="paper"||Playerhand ==="scissors"){      
 } else {alert("wrong word");}
 
 // compare 
+function switchResult(Playerhand){
 switch(Playerhand) {
     case 'rock':
         if (Computerhand === 'rock'){
-            alert('tie');}
+            return ('tie');}
             else if (Computerhand==='scissors'){
-                alert('you win');
+                return ('you win');
             }else{
-                alert('you lose');
+                return ('you lose');
             };
             break;
     case 'paper':
         if (Computerhand === 'paper'){
-            alert('tie');}
+            return ('tie');}
             else if (Computerhand==='scissors'){
-                alert('you lose');
+                return ('you lose');
             }else{
-                alert('you win');
+                return ('you win');
             };
             break;
     case 'scissors':
         if (Computerhand === 'scissors'){
-            alert('tie');}
+            return ('tie');}
             else if (Computerhand==='paper'){
-                alert('you win');
+                return ('you win');
             }else{
-                alert('you lose');
+                return ('you lose');
             };
             break;
-}           
-//return outcome 
+}
+}   
+//grab outcome from compare function
+let outcomes = switchResult(Playerhand);
