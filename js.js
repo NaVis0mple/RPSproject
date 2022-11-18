@@ -1,4 +1,8 @@
 //5game
+let i = 0
+for (;i<5;i++){
+
+
 // player type rock paper or scissor
 let Playerhand = SensitiveChange(prompt("your turn")) ;
 // convert typein into uppercase 
@@ -16,7 +20,7 @@ let Computerhand = randomSelection(list);
 window.onload = function(){   //to solve https://stackoverflow.com/questions/18239430/cannot-set-property-innerhtml-of-null
     document.getElementById("player").innerHTML= SensitiveChange(Playerhand);
     document.getElementById("computer").innerHTML= Computerhand;
-    document.getElementById("results").innerHTML= switchResult(Playerhand);//return outcome 
+    
     }
 // check typein and compare
 if (Playerhand === "rock"||Playerhand ==="paper"||Playerhand ==="scissors"){      
@@ -56,3 +60,12 @@ switch(Playerhand) {
 }   
 //grab outcome from compare function
 let outcomes = switchResult(Playerhand);
+
+//if outcomesbad
+if (outcomes===undefined) {
+    document.write("<p>"+"game"+(i+1)+":"+"wrongword"+"</p>")}
+else {document.write("<p>"+"game"+(i+1)+":"+outcomes +"</p>")};
+
+console.log(i);
+console.log(outcomes);
+}
