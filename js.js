@@ -61,7 +61,7 @@ switch(Playerhand) {
 //grab outcome from compare function
 let outcomes = switchResult(Playerhand);
 
-//if outcomesbad
+//print outcome https://stackoverflow.com/questions/6957917/how-to-get-html-to-print-return-value-of-javascript-function
 if (outcomes===undefined) {
     document.write("<p>"+"game"+(i+1)+":"+"wrongword"+"</p>")}
 else {document.write("<p>"+"game"+(i+1)+":"+outcomes +"</p>")};
