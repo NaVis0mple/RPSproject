@@ -1,71 +1,51 @@
-//5game
-let i = 0
-for (;i<5;i++){
+
+let btn = document.querySelector('#btn');
+let Playerhand = '';
+btn.addEventListener('click',(e)=>{
+    document.getElementById("player").innerHTML= e.target.value;
+    Playerhand = e.target.value;
+    switchResult(Playerhand);
+
+    document.getElementById('outcome').innerHTML=  switchResult(Playerhand);
+
+});
 
 
-// player type rock paper or scissor
-let Playerhand = SensitiveChange(prompt("your turn")) ;
-// convert typein into uppercase 
-function SensitiveChange(word) {
-    return word.toLowerCase();
-}
-//computergeneratorRandom
-let list = ["rock","paper","scissors"];
 
-function randomSelection(list){    //random=0~0.99999     floor = 1.85421->1
-    return list [Math.floor((Math.random()*list.length))];
-}
-//return to html
-let Computerhand = randomSelection(list);
-window.onload = function(){   //to solve https://stackoverflow.com/questions/18239430/cannot-set-property-innerhtml-of-null
-    document.getElementById("player").innerHTML= SensitiveChange(Playerhand);
-    document.getElementById("computer").innerHTML= Computerhand;
     
-    }
-// check typein and compare
-if (Playerhand === "rock"||Playerhand ==="paper"||Playerhand ==="scissors"){      
-} else {alert("wrong word");}
 
-// compare 
 function switchResult(Playerhand){
+    let list = ["rock","paper","scissors"];
+    function randomSelection(list) {return list [Math.floor((Math.random()*list.length))];}
+    let Computerhand = randomSelection(list);
+    document.getElementById("computer").innerHTML= Computerhand; 
+    
 switch(Playerhand) {
+    
     case 'rock':
         if (Computerhand === 'rock'){
-            return ('tie');}
+                return 'tie';}
             else if (Computerhand==='scissors'){
-                return ('you win');
+                return 'you win';
             }else{
-                return ('you lose');
+                return 'you lose';
             };
-            break;
     case 'paper':
         if (Computerhand === 'paper'){
-            return ('tie');}
+            return 'tie';}
             else if (Computerhand==='scissors'){
-                return ('you lose');
+                return 'you lose';
             }else{
-                return ('you win');
+                return 'you win';
             };
-            break;
     case 'scissors':
         if (Computerhand === 'scissors'){
-            return ('tie');}
+            return 'tie';}
             else if (Computerhand==='paper'){
-                return ('you win');
+                return 'you win';
             }else{
-                return ('you lose');
+                return 'you lose';
             };
-            break;
 }
-}   
-//grab outcome from compare function
-let outcomes = switchResult(Playerhand);
-
-//print outcome https://stackoverflow.com/questions/6957917/how-to-get-html-to-print-return-value-of-javascript-function
-if (outcomes===undefined) {
-    document.write("<p>"+"game"+(i+1)+":"+"wrongword"+"</p>")}
-else {document.write("<p>"+"game"+(i+1)+":"+outcomes +"</p>")};
-
-console.log(i);
-console.log(outcomes);
 }
+let result = switchResult(Playerhand) ;
